@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GnoMe Chat</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"
+      integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="overlay">
+      <div class="tos-modal" id="tosModal">
+        <h3>Warning: This area is for adults only!</h3>
+        <p>
+          This area of the Website is for use solely by responsible adults over
+          18-years old and the age of consent in the jurisdiction from which it
+          is being accessed.
+        </p>
+        <div class="scroll-area">
+          <div class="scroll-area-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. The
+              materials that are available within this part of the Website may
+              include graphic visual depictions and descriptions of nudity and
+              sexual activity and must not be accessed by anyone who is younger
+              than 18-years old and the age of majority in their jurisdiction.
+              Visiting this area of the Website if you are under 18-years old
+              and the age of majority may be prohibited by the law of your
+              jurisdiction.
+            </p>
+            <p>
+              By clicking “I Agree” below, you state that the following
+              statements are accurate:
+            </p>
+            <ul>
+              <li>
+                Praesent maximus nisi sed arcu consequat, mollis accumsan felis
+                mollis. I am an adult, at least 18-years old and the age of
+                majority, and I have the legal right to access and possess adult
+                material in my community.
+              </li>
+              <li>
+                I understand that the Website uses cookies. By clicking 'I
+                Agree,' I consent to the Website's Cookie Policy.
+              </li>
+              <li>
+                I am voluntarily choosing to access this area of the Website,
+                because I want to view, read, or hear the various materials that
+                are available.
+              </li>
+              <li>
+                Nullam commodo nunc sed sem ultrices porttitor. I do not find
+                depictions of nude adults, adults engaged in sexual acts, or
+                other sexual material to be offensive or objectionable.
+              </li>
+              <li>
+                I understand and will abide by the standards and laws of my
+                community.
+              </li>
+              <li>
+                By logging on and viewing any part of the Website, I will not
+                hold the Website’s owners or its employees responsible for any
+                materials located on the Website.
+              </li>
+              <li>
+                I acknowledge that my use of the Website is governed by the
+                Website’s Terms-of-Use Agreement, which I have reviewed and
+                agree to be bound by.
+              </li>
+              <li>
+                I confirm that I have reviewed and accept the website's Privacy
+                Policy.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <strong
+          >If you do not agree, click on the “I Disagree” button below and exit
+          the Website.
+        </strong>
+        <div class="modal-buttons">
+          <button onclick="handleAgree()">I Agree</button>
+          <button onclick="handleDisagree()">I Disagree</button>
+        </div>
+      </div>
+      <div class="media-modal" id="mediaModal">
+        <h3>One last thing ...</h3>
+        <p>
+          Click "Allow" to grant media permissions for full access. Camera shy?
+          Check out the
+          <b><a href="/text-chat">Text Chat</a> </b> page.
+        </p>
+      </div>
+    </div>
+    <header>
+      <nav>
+        <div class="container">
+          <img class="logo" src="/img/Logo.png" alt="" />
+          <h2>Get to GnoMe</h2>
+          <div class="online-status">5000+ online now</div>
+        </div>
+      </nav>
+    </header>
+    <main class="video_chat_main_container">
+      <div class="video_chat_container">
+        <div class="video-tag-container">
+          <div class="videos">
+            <video
+              src=""
+              class="video-player"
+              id="user-2"
+              autoplay="autoplay"
+              playsinline="playsinline"
+            ></video>
+            <video
+              src=""
+              class="video-player"
+              id="user-1"
+              autoplay="autoplay"
+              playsinline="playsinline"
+              style="border-top: 2px solid white"
+            ></video>
+            <div class="video-controls">
+              <button
+                onclick="muteUnmute()"
+                class="control-button"
+                id="muteButton"
+              >
+                Mute
+              </button>
+              <button
+                onclick="playStop()"
+                class="control-button"
+                id="stopButton"
+              >
+                Stop
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="chat-container">
+          <div class="chat-text-container">
+            <p>You are now chatting with a random stranger</p>
+            <p>You both speak the same language - English</p>
+            <hr class="horizontal-divider" />
+            <p class="chat-text-area"></p>
+          </div>
+          <div class="next-chat-container">
+            <div class="next-chat">Skip</div>
+            <div class="type-message">
+              <textarea name="" id="msg-input" cols="30" rows="5"></textarea>
+            </div>
+            <div class="msg-send-button">Send</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/videopage.js"></script>
+  </body>
+</html>

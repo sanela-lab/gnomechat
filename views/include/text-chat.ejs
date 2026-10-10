@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GnoMe Chat</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"
+      integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <img class="logo" src="/img/Logo.png" alt="" />
+          <h2>Get to GnoMe</h2>
+          <div class="online-status">5000+ online now</div>
+        </div>
+      </nav>
+    </header>
+    <main class="video_chat_main_container">
+      <div
+        class="video_chat_container"
+        style="justify-content: center; align-items: center"
+      >
+        <div class="chat-container">
+          <div class="chat-text-container" style="background-color: lightblue">
+            <p>You are now chatting with a random stranger</p>
+            <p>You both speak the same language - English</p>
+            <hr class="horizontal-divider" />
+            <p class="chat-text-area"></p>
+          </div>
+          <div class="next-chat-container">
+            <div class="next-chat">
+              <div>Next</div>
+            </div>
+            <div class="type-message">
+              <textarea name="" id="msg-input" cols="30" rows="5"></textarea>
+            </div>
+            <div class="msg-send-button">Send</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/textpage.js"></script>
+  </body>
+</html>
